@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Koushik Shanbhag</title>
+  <meta name="description" content="Koushik Shanbhag — placeholder tagline, replace with a real one." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#now">Now</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" style="border-top: none; padding-top: 0;">
+        <h1>Koushik Shanbhag</h1>
+        <p class="tagline">
+          Placeholder tagline — one line about what you do goes here. Replace with your own.
+        </p>
+        <p class="contact">
+          Get in touch via <a href="mailto:you@example.com">email</a>, see the code
+          on <a href="https://github.com/YOUR-GITHUB-USERNAME">GitHub</a>, or find me on
+          <a href="https://linkedin.com/in/YOUR-USERNAME">LinkedIn</a>.
+        </p>
+      </section>
+
+      <section id="work">
+        <h2>Work</h2>
+        <ul class="entry-list">
+          <li class="entry">
+            <div class="entry-head">
+              <a href="#">Placeholder Project One</a>
+              <span class="entry-date">2024 – Present</span>
+            </div>
+            <p class="entry-desc">One line describing this project — replace with something real.</p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <a href="#">Placeholder Project Two</a>
+              <span class="entry-date">2023</span>
+            </div>
+            <p class="entry-desc">Another short, plain description of dummy work goes here.</p>
+          </li>
+          <li class="entry">
+            <div class="entry-head">
+              <a href="#">Placeholder Company / Role</a>
+              <span class="entry-date">2022 – 2023</span>
+            </div>
+            <p class="entry-desc">What you did there, in a single sentence.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="writing">
+        <h2>Writing</h2>
+        <div id="writing-list">
+          <p class="empty-note">Loading posts…</p>
+        </div>
+        <a class="section-more" href="/blog/index.html">All writing →</a>
+      </section>
+
+      <section id="now">
+        <h2>Now</h2>
+        <p class="now-updated">Last updated 10 Sep 2026</p>
+        <div class="now-body">
+          <p>
+            Placeholder "now" text. This is where you write a short paragraph about
+            <strong>what you're currently focused on</strong> — a project, a skill
+            you're learning, or a habit you're building. Replace this whole section
+            once you know what you want it to say.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="elsewhere">
+        <a href="https://github.com/YOUR-GITHUB-USERNAME">GitHub</a>
+        <a href="https://linkedin.com/in/YOUR-USERNAME">LinkedIn</a>
+        <a href="https://twitter.com/YOUR-USERNAME">Twitter</a>
+        <a href="mailto:you@example.com">Email</a>
+      </div>
+      <p class="copyright">© <span id="year"></span> Koushik Shanbhag</p>
+    </footer>
+  </div>
+
+  <script src="/assets/blog.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    fetchAllPosts()
+      .then((posts) => {
+        renderPostList(posts.slice(0, 3), document.getElementById("writing-list"), {
+          emptyMessage: "Nothing published yet.",
+        });
+      })
+      .catch(() => {
+        renderPostList([], document.getElementById("writing-list"), {
+          emptyMessage: "Posts will appear here once the repo details in assets/blog.js are set and a post is published.",
+        });
+      });
+  </script>
+</body>
+</html>

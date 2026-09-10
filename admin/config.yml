@@ -1,6 +1,3 @@
-# Sveltia CMS config — see README.md for full setup steps.
-#
-# >>> Replace OWNER/REPO below with your actual GitHub username and repo name <<<
 backend:
   name: github
   repo: shanbhagkoushik/shanbhagkoushik.github.io
@@ -10,14 +7,109 @@ media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
-  - name: "blog"
-    label: "Writing"
-    folder: "content/blog"
+  - name: blog
+    label: Legacy blog
+    folder: content/blog
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
-      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
-      - { label: "Slug", name: "slug", widget: "string", hint: "Used in the URL, e.g. hello-world" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, format: YYYY-MM-DD }
+      - { label: Excerpt, name: excerpt, widget: text, required: false }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: writing
+    label: Writing branches
+    folder: content/writing
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: date, format: YYYY-MM-DD }
+      - { label: Slug, name: slug, widget: string }
+      - { label: Branch name, name: series, widget: string }
+      - { label: Branch description, name: seriesDescription, widget: text, required: false }
+      - { label: Chapter order, name: seriesOrder, widget: number, value_type: int, default: 0 }
+      - { label: Excerpt, name: excerpt, widget: text, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: projects
+    label: Projects
+    folder: content/projects
+    create: true
+    slug: "{{slug}}"
+    fields: &entry_fields
+      - { label: Title, name: title, widget: string }
+      - { label: Subtitle, name: subtitle, widget: string, required: false }
+      - { label: Date, name: date, widget: date, required: false, format: YYYY-MM-DD }
+      - { label: Mark, name: mark, widget: string, required: false }
+      - { label: Tags, name: tags, widget: string, required: false }
+      - { label: External URL, name: url, widget: string, required: false }
+      - { label: Order, name: order, widget: number, value_type: int, default: 0 }
+      - { label: Description, name: body, widget: markdown }
+
+  - name: open-source
+    label: Open Source
+    folder: content/open-source
+    create: true
+    slug: "{{slug}}"
+    fields: *entry_fields
+
+  - name: work
+    label: Work
+    folder: content/work
+    create: true
+    slug: "{{slug}}"
+    fields: *entry_fields
+
+  - name: education
+    label: Education
+    folder: content/education
+    create: true
+    slug: "{{slug}}"
+    fields: *entry_fields
+
+  - name: talks
+    label: Talks
+    folder: content/talks
+    create: true
+    slug: "{{slug}}"
+    fields: *entry_fields
+
+  - name: page-settings
+    label: Page settings
+    files:
+      - name: writing
+        label: Writing page
+        file: content/pages/writing/index.md
+        fields: &page_fields
+          - { label: Title, name: title, widget: string }
+          - { label: Intro, name: excerpt, widget: text }
+      - name: projects
+        label: Projects page
+        file: content/pages/projects/index.md
+        fields: *page_fields
+      - name: open-source
+        label: Open Source page
+        file: content/pages/open-source/index.md
+        fields: *page_fields
+      - name: work
+        label: Work page
+        file: content/pages/work/index.md
+        fields: *page_fields
+      - name: education
+        label: Education page
+        file: content/pages/education/index.md
+        fields: *page_fields
+      - name: talks
+        label: Talks page
+        file: content/pages/talks/index.md
+        fields: *page_fields
+      - name: about
+        label: About page
+        file: content/pages/about/index.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Intro, name: excerpt, widget: text }
+          - { label: Body, name: body, widget: markdown }

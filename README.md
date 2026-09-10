@@ -1,8 +1,13 @@
 # Koushik Shanbhag — personal site
 
-A plain HTML/CSS/JS site with a blog. No build step, no framework, no database.
-Blog posts are markdown files in `content/blog`, editable by hand or through
-the `/admin` panel (Sveltia CMS), which commits changes straight to this repo.
+A plain HTML/CSS/JS site with separate pages for writing, projects, open source,
+work, education, talks, and about. No build step, no framework, no database.
+All page content is markdown under `content/`, editable through the `/admin`
+panel (Sveltia CMS), which commits changes straight to this repo.
+
+Writing supports branches: give several files the same `series` value and set
+their `seriesOrder`. The Writing page groups them into a chapter list, like a
+technical notebook with multiple ongoing threads.
 
 ## 1. Fill in your details
 
@@ -11,8 +16,10 @@ Everything is placeholder text right now. Search for and replace:
 - Your name/tagline/bio in `index.html`
 - Social links (`YOUR-GITHUB-USERNAME`, `YOUR-USERNAME`, `you@example.com`) in
   `index.html`
-- The "Work" list in `index.html`
-- The two dummy posts in `content/blog/` (edit, delete, or replace them)
+- Entries in `content/work`, `content/projects`, `content/open-source`,
+  `content/education`, and `content/talks`
+- Writing branches in `content/writing`
+- Page titles and introductions in `content/pages/*/index.md`
 
 ## 2. Point the site at your repo
 

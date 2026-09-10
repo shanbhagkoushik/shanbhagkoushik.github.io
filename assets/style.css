@@ -1,0 +1,352 @@
+/* -------------------------------------------------------------
+   Koushik Shanbhag — personal site
+   Design tokens
+   ------------------------------------------------------------- */
+
+:root {
+  --bg: #15140f;
+  --ink: #ece7d9;
+  --muted: #948c79;
+  --line: #302e20;
+  --accent: #a9c390;
+  --accent-ink: #15140f;
+  --gutter: #423f2d;
+
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+  --font-body: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  --measure: 640px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 3rem;
+  --space-5: 5rem;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #faf7f0;
+    --ink: #1a1410;
+    --muted: #7a6f63;
+    --line: #d9d3c6;
+    --accent: #5d7d52;
+    --accent-ink: #faf7f0;
+    --gutter: #b8b0a0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  position: relative;
+}
+
+/* decorative line-number gutter, editor-style — hidden on narrow screens */
+.line-numbers {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gutter);
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.line-numbers span {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .line-numbers {
+    display: none;
+  }
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+a {
+  color: var(--ink);
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 901px) {
+  .wrap {
+    padding-left: calc(2.5rem + 1.5rem);
+  }
+}
+
+/* ---------------- header ---------------- */
+
+.site-header {
+  padding: var(--space-4) 0 var(--space-2);
+}
+
+.site-header nav {
+  display: flex;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+}
+
+.site-header nav a {
+  color: var(--muted);
+}
+
+.site-header nav a:hover {
+  color: var(--accent);
+}
+
+/* ---------------- hero ---------------- */
+
+.hero {
+  padding: var(--space-3) 0 var(--space-4);
+  animation: rise 0.6s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    animation: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-2);
+}
+
+.hero .tagline {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 34ch;
+  margin: 0 0 var(--space-3);
+}
+
+.hero .contact {
+  font-size: 0.98rem;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+/* ---------------- sections ---------------- */
+
+section {
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--line);
+}
+
+section > h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 var(--space-3);
+}
+
+section > h2 .num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--muted);
+  margin-right: 0.6rem;
+  vertical-align: middle;
+}
+
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.entry {
+  display: block;
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.entry-head a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.entry-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.entry-desc {
+  color: var(--muted);
+  margin: 0.25rem 0 0;
+}
+
+.section-more {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-size: 0.95rem;
+}
+
+/* ---------------- now/about ---------------- */
+
+.now-updated {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 var(--space-2);
+}
+
+.now-body p {
+  margin: 0 0 1em;
+}
+
+.now-body strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------------- footer ---------------- */
+
+.site-footer {
+  padding: var(--space-4) 0 var(--space-5);
+  border-top: 1px solid var(--line);
+}
+
+.elsewhere {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  font-family: var(--font-display);
+  margin: 0 0 var(--space-3);
+}
+
+.copyright {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---------------- blog listing / post ---------------- */
+
+.page-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 5vw, 2.5rem);
+  margin: 0 0 var(--space-3);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  font-size: 0.95rem;
+}
+
+.post-meta {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 var(--space-3);
+}
+
+.post-body h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+.post-body p {
+  margin: 0 0 1em;
+}
+
+.post-body pre {
+  background: var(--line);
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 0 0 1em;
+}
+
+.post-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.post-body blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1em;
+  margin-left: 0;
+  color: var(--muted);
+}
+
+.empty-note {
+  color: var(--muted);
+  font-style: italic;
+}

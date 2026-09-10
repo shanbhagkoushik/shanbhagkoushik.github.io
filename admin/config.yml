@@ -1,0 +1,23 @@
+# Sveltia CMS config — see README.md for full setup steps.
+#
+# >>> Replace OWNER/REPO below with your actual GitHub username and repo name <<<
+backend:
+  name: github
+  repo: shanbhagkoushik/shanbhagkoushik.github.io
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "blog"
+    label: "Writing"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - { label: "Slug", name: "slug", widget: "string", hint: "Used in the URL, e.g. hello-world" }
+      - { label: "Body", name: "body", widget: "markdown" }

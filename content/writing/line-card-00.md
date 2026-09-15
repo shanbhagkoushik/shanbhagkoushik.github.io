@@ -5,7 +5,7 @@ slug: line-card-00
 series: Line-card BFD
 seriesDescription: Building a BFD offload whose fast path runs in XDP, from measuring the folklore about software BFD to a dual-stack engine with echo and multihop.
 seriesOrder: 0
-excerpt: The starting point for a practical line-card BFD implementation.
+excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ---
 
-This is the opening chapter of a writing branch. Replace this text in Admin with the story you want to tell.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

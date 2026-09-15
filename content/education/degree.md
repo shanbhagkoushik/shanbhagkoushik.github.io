@@ -7,6 +7,4 @@ tags: Metallurgical and Materials Engineering, IPv6, Infrastructure
 order: 0
 ---
 
-- Ran infrastructure for IRIS, the institute's technical team, alongside the degree.
-- Researched network access control under Prof. Mohit P. Tahiliani.
-- Led the APNIC-funded campus IPv6 deployment.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

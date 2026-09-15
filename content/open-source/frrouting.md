@@ -6,7 +6,4 @@ tags: 3 merged, 3 open
 order: 0
 ---
 
-Found while building xdp-bfd against FRR's distributed BFD dataplane. Six bugs reported in total, each with a reproducer that needed no dataplane implementation.
-
-- Fixed silent and permanent loss of BFD sessions when the initial dataplane registration overflowed the 8KB output buffer.
-- Implemented RFC 5880 echo interval negotiation for offloaded sessions.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

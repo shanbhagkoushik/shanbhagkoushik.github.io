@@ -1,10 +1,6 @@
 ---
 title: About
-excerpt: Firmware Engineer, Quantum Networks · Mangalore, India
+excerpt: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ---
 
-I work on networks and firmware, which in practice means spending my time somewhere between a bootloader and a routing daemon.
-
-Most of what I use, I host. Mail, DNS, photos, passwords, chat, and this site all run on a small machine in my flat. A good share of what I have learned about networking came from breaking it, then writing down what happened.
-
-This page, every project, and every writing branch on this site is editable from the Admin panel.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

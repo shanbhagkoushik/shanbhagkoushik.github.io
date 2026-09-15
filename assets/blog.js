@@ -17,6 +17,25 @@ function rawUrl(path) {
   return `https://raw.githubusercontent.com/${SITE.owner}/${SITE.repo}/${SITE.branch}/${path}`;
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function safeUrl(value) {
+  try {
+    const url = new URL(value, window.location.href);
+    if (["http:", "https:", "mailto:"].includes(url.protocol)) return url.href;
+  } catch {
+    // Fall through to a harmless link for malformed URLs.
+  }
+  return "#";
+}
+
 /** Very small frontmatter parser: expects
  * ---
  * key: value
@@ -51,6 +70,7 @@ async function fetchAllPosts() {
   const listRes = await fetch(API_LIST_URL);
   if (!listRes.ok) throw new Error(`GitHub API error: ${listRes.status}`);
   const files = await listRes.json();
+  if (!Array.isArray(files)) throw new Error("GitHub API returned an invalid file list");
   const mdFiles = files.filter((f) => f.name.endsWith(".md"));
 
   const posts = await Promise.all(
@@ -93,10 +113,10 @@ function renderPostList(posts, mountEl, { emptyMessage, postLinkBase = "blog/pos
     li.className = "entry";
     li.innerHTML = `
       <div class="entry-head">
-        <a href="${postLinkBase}?slug=${encodeURIComponent(post.slug)}">${post.title}</a>
-        <span class="entry-date">${formatDate(post.date)}</span>
+        <a href="${escapeHtml(postLinkBase)}?slug=${encodeURIComponent(post.slug)}">${escapeHtml(post.title)}</a>
+        <span class="entry-date">${escapeHtml(formatDate(post.date))}</span>
       </div>
-      ${post.excerpt ? `<p class="entry-desc">${post.excerpt}</p>` : ""}
+      ${post.excerpt ? `<p class="entry-desc">${escapeHtml(post.excerpt)}</p>` : ""}
     `;
     ul.appendChild(li);
   });
@@ -107,9 +127,6 @@ function renderPostList(posts, mountEl, { emptyMessage, postLinkBase = "blog/pos
  * paragraphs, blockquotes, code. Good enough for personal writing without
  * pulling in a dependency. */
 function renderMarkdown(md) {
-  const escapeHtml = (s) =>
-    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
   const blocks = md.split(/\r?\n\r?\n/);
   return blocks
     .map((block) => {
@@ -134,7 +151,7 @@ function renderMarkdown(md) {
     return escapeHtml(text)
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
       .replace(/\*(.+?)\*/g, "<em>$1</em>")
-      .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>')
+      .replace(/\[(.+?)\]\((.+?)\)/g, (_, label, url) => `<a href="${escapeHtml(safeUrl(url))}">${label}</a>`)
       .replace(/`(.+?)`/g, "<code>$1</code>");
   }
 }

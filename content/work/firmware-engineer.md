@@ -7,6 +7,4 @@ tags: OpenWrt, U-Boot, Qualcomm IPQ60xx, Secure Boot
 order: 0
 ---
 
-- Implemented verified boot in U-Boot for OpenWrt-based access points, with authenticated kernel and rootfs validation across dual-image flash layouts.
-- Built and validated secure-boot workflows for Qualcomm platforms: key provisioning, image signing, fuse programming, and boot-chain verification.
-- Developed firmware-signing pipelines with RSA-PSS signing, SHA-384 fuse hashing, and signed recovery images.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.

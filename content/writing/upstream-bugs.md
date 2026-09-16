@@ -1,10 +1,10 @@
 ---
-title: Upstream bugs in FRR's BFD daemon
-date: 2026-06-18
-slug: upstream-bugs
-series: Upstream bugs in FRR's BFD daemon
-seriesDescription: Six bugs found while building an offload, each reduced to a small reproducer.
+title: Sample Standalone Article
+date: 2020-02-01
+slug: sample-standalone-article
+series: Sample Standalone Series
+seriesDescription: A placeholder series description for demonstration content.
 seriesOrder: 0
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+This is placeholder standalone article content for demonstration purposes.

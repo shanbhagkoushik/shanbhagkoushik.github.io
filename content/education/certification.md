@@ -1,10 +1,10 @@
 ---
-title: OCI Certified DevOps Professional
-subtitle: Oracle
-date: 2025-01-01
+title: Sample Certification
+subtitle: Example Organization
+date: 2021-01-01
 mark: "—"
-tags: DevOps, Containers, Cloud
+tags: Example, Sample, Placeholder
 order: 1
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+This is placeholder certification content for demonstration purposes.

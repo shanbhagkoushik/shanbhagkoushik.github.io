@@ -1,8 +1,8 @@
 ---
-title: Sample Article 04
+title: Example Article 04
 date: 2020-01-05
-slug: sample-article-04
-series: Sample Writing Series
+slug: example-article-04
+series: Dummy Writing Series
 seriesOrder: 4
 ---
 

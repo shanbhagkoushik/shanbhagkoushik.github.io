@@ -1,9 +1,9 @@
 ---
-title: Another Sample Project
-subtitle: Another example project description
+title: Example Personal Project
+subtitle: Placeholder description
 mark: "⌂"
-tags: Example, Sample, Placeholder
+tags: Dummy, Placeholder
 order: 1
 ---
 
-This is additional placeholder project content for demonstration purposes.
+This project entry is intentionally generic and should be replaced with an actual project description, goals, and outcomes.

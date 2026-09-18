@@ -14,7 +14,7 @@ technical notebook with multiple ongoing threads.
 Everything is placeholder text right now. Search for and replace:
 
 - Your name/tagline/bio in `index.html`
-- Social links (`YOUR-GITHUB-USERNAME`, `YOUR-USERNAME`, `you@example.com`) in
+- Social links (`your-github-username`, `your-username`, `hello@example.com`) in
   `index.html`
 - Entries in `content/work`, `content/projects`, `content/open-source`,
   `content/education`, and `content/talks`

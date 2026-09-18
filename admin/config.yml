@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: shanbhagkoushik/shanbhagkoushik.github.io
+  repo: your-github-username/your-site-repo
   branch: main
 
 media_folder: "assets/uploads"

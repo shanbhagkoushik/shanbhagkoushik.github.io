@@ -1,8 +1,8 @@
 ---
-title: Sample Article 06
+title: Example Article 06
 date: 2020-01-07
-slug: sample-article-06
-series: Sample Writing Series
+slug: example-article-06
+series: Dummy Writing Series
 seriesOrder: 6
 ---
 

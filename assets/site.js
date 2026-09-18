@@ -1,6 +1,6 @@
 const SITE = {
-  owner: "shanbhagkoushik",
-  repo: "shanbhagkoushik.github.io",
+  owner: "your-github-username",
+  repo: "your-site-repo",
   branch: "main",
 };
 
